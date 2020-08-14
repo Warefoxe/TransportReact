@@ -6,16 +6,20 @@ import {
   setCargoesAC,
   setCurrentPageAC,
   setTotalCargoCountAC,
+  toggleIsFetchingAC,
 } from "../../redux/cargoes-reducer";
+import Loader from "../../app/layout/Loader/Loader";
 
 class CargoesContainer extends Component {
   componentDidMount() {
+    this.props.toggleIsFetching(true);
     axios
       .get(
         // "http://localhost:59101/api/cargo"
         `http://localhost:59101/api/cargo?PageNumber=${this.props.currentPage}&PageSize=${this.props.pageSize}`
       )
       .then((response) => {
+        this.props.toggleIsFetching(false);
         // console.log(response);
         this.props.setCargoes(response.data.data);
         this.props.setTotalCargoCount(response.data.totalRecords);
@@ -24,12 +28,14 @@ class CargoesContainer extends Component {
 
   onPageChanged = (pageNumber) => {
     this.props.setCurrentPage(pageNumber);
+    this.props.toggleIsFetching(true);
     axios
       .get(
         // "http://localhost:59101/api/cargo"
         `http://localhost:59101/api/cargo?PageNumber=${pageNumber}&PageSize=${this.props.pageSize}`
       )
       .then((response) => {
+        this.props.toggleIsFetching(false);
         // console.log(response);
         this.props.setCargoes(response.data.data);
       });
@@ -37,13 +43,16 @@ class CargoesContainer extends Component {
 
   render() {
     return (
-      <Cargoes
-        totalCargosCount={this.props.totalCargosCount}
-        pageSize={this.props.pageSize}
-        currentPage={this.props.currentPage}
-        onPageChanged={this.onPageChanged}
-        cargoes={this.props.cargoes}
-      />
+      <>
+        {this.props.isFetching ? <Loader /> : null}
+        <Cargoes
+          totalCargosCount={this.props.totalCargosCount}
+          pageSize={this.props.pageSize}
+          currentPage={this.props.currentPage}
+          onPageChanged={this.onPageChanged}
+          cargoes={this.props.cargoes}
+        />
+      </>
     );
   }
 }
@@ -54,6 +63,7 @@ const mapStateToProps = (state) => {
     pageSize: state.cargoesPage.pageSize,
     totalCargosCount: state.cargoesPage.totalCargosCount,
     currentPage: state.cargoesPage.currentPage,
+    isFetching: state.cargoesPage.isFetching,
   };
 };
 
@@ -68,10 +78,10 @@ const mapDispatchToProps = (dispatch) => {
     setTotalCargoCount: (totalCount) => {
       dispatch(setTotalCargoCountAC(totalCount));
     },
+    toggleIsFetching: (isFetching) => {
+      dispatch(toggleIsFetchingAC(isFetching));
+    },
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CargoesContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CargoesContainer);

@@ -5,8 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import CargoesContainer from "./components/Cargoes/CargoesContainer";
+import Navbar from "../../components/Navbar/Navbar";
+import CargoesContainer from "../../components/Cargoes/CargoesContainer";
 
 const App = () => {
   return (

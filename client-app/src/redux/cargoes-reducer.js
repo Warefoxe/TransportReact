@@ -1,12 +1,14 @@
 const SET_CARGOES = "SET_CARGOES";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_CARGOS_COUNT = "SET_TOTAL_CARGOS_COUNT";
+const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = {
   cargoes: [],
-  pageSize: 2,
+  pageSize: 4,
   totalCargosCount: 0,
   currentPage: 1,
+  isFetching: true,
 };
 
 const cargoesReducer = (state = initialState, action) => {
@@ -25,6 +27,11 @@ const cargoesReducer = (state = initialState, action) => {
       return {
         ...state,
         totalCargosCount: action.count,
+      };
+    case TOGGLE_IS_FETCHING:
+      return {
+        ...state,
+        isFetching: action.isFetching,
       };
     default:
       return state;
@@ -49,6 +56,13 @@ export const setTotalCargoCountAC = (totalCargosCount) => {
   return {
     type: SET_TOTAL_CARGOS_COUNT,
     count: totalCargosCount,
+  };
+};
+
+export const toggleIsFetchingAC = (isFetching) => {
+  return {
+    type: TOGGLE_IS_FETCHING,
+    isFetching,
   };
 };
 
