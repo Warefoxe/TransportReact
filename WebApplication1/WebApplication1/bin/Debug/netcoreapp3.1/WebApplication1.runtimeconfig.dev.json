@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\juras\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\juras\\.nuget\\packages"
+    ]
+  }
+}
