@@ -51,5 +51,14 @@ namespace WebApplication1.Controllers
             var cargo = await context.Cargos.Where(a => a.Id == id).FirstOrDefaultAsync();
             return Ok(new Response<Cargo>(cargo));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Cargo cargo)
+        {
+            context.Cargos.Add(cargo);
+            await context.SaveChangesAsync();
+            return Ok(cargo.Id);
+        }
+
     }
 }

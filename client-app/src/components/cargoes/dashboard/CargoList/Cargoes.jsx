@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Cargoes.module.css";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Pagination = styled.div`
   display: inline-block;
@@ -46,20 +47,6 @@ const Description = styled.p`
   font-weight: 300;
 `;
 
-const ActionButton = styled.button`
-  margin: 0 5px;
-  padding: 8px 14px;
-  background: rgba(155, 155, 155, 0.2);
-  color: #000000;
-  cursor: pointer;
-  border: 1px solid #fff;
-  outline: 0;
-  font-weight: 300;
-  :hover {
-    opacity: 0.8;
-  }
-`;
-
 const Cargoes = (props) => {
   let pagesCount = Math.ceil(props.totalCargosCount / props.pageSize);
   let pages = [];
@@ -72,7 +59,9 @@ const Cargoes = (props) => {
     <div>
       {props.cargoes.map((cargo) => (
         <div key={cargo.id}>
-          <Name>{cargo.name}</Name>
+          <NavLink to={"/cargo/" + cargo.id}>
+            <Name>{cargo.name}</Name>
+          </NavLink>
           <Body>
             <Desc>
               <Weight>
@@ -85,9 +74,6 @@ const Cargoes = (props) => {
                 <b>Деталі замовлення: </b>
                 {cargo.description}
               </Description>
-            </Desc>
-            <Desc>
-              <ActionButton>Детальніше</ActionButton>
             </Desc>
           </Body>
         </div>

@@ -1,0 +1,64 @@
+#home {
+  height: 100vh;
+  min-height: 500px;
+  background: url(../../../../assets/img/bg2.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#home .inner_width {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#home .content {
+  background: rgba(0, 0, 0, 0.21);
+  color: white;
+  font-size: 21px;
+  line-height: 48px;
+  text-transform: none;
+  font-weight: bold;
+  padding: 11px 0;
+}
+
+#home .content span {
+  font-size: 29px;
+  text-transform: uppercase;
+}
+
+#home .content div {
+  word-wrap: break-word;
+}
+
+#home .buttons {
+  margin-top: 60px;
+}
+
+#home .buttons a {
+  display: inline-block;
+  margin: 15px 30px;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  width: 180px;
+  border: 1px solid rgb(105, 145, 255);
+  padding: 14px 0;
+  border-radius: 6px;
+  transition: 0.2s linear;
+}
+
+#home .buttons a:hover {
+  background-color: rgb(105, 145, 255);
+  color: #ffffff;
+}
+
+.btnDesc {
+  color: white;
+  font-size: 23px;
+  line-height: 28px;
+  margin-top: 15px;
+  font-weight: bold;
+}

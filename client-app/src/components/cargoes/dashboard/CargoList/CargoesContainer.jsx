@@ -7,8 +7,8 @@ import {
   setCurrentPage,
   setTotalCargoCount,
   toggleIsFetching,
-} from "../../redux/cargoes-reducer";
-import Loader from "../../app/layout/Loader/Loader";
+} from "../../../../redux/cargoes-reducer";
+import Loader from "../../../../app/layout/Loader/Loader";
 
 class CargoesContainer extends Component {
   componentDidMount() {

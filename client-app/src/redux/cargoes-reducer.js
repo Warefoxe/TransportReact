@@ -1,10 +1,12 @@
 const SET_CARGOES = "SET_CARGOES";
+const SET_CARGO = "SET_CARGO";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_CARGOS_COUNT = "SET_TOTAL_CARGOS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 
 let initialState = {
   cargoes: [],
+  cargo: null,
   pageSize: 4,
   totalCargosCount: 0,
   currentPage: 1,
@@ -17,6 +19,11 @@ const cargoesReducer = (state = initialState, action) => {
       return {
         ...state,
         cargoes: action.cargoes,
+      };
+    case SET_CARGO:
+      return {
+        ...state,
+        cargo: action.cargo,
       };
     case SET_CURRENT_PAGE:
       return {
@@ -42,6 +49,13 @@ export const setCargoes = (cargoes) => {
   return {
     type: SET_CARGOES,
     cargoes,
+  };
+};
+
+export const setCargo = (cargo) => {
+  return {
+    type: SET_CARGO,
+    cargo,
   };
 };
 

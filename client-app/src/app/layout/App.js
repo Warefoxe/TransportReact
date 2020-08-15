@@ -6,7 +6,9 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Navbar from "../../components/Navbar/Navbar";
-import CargoesContainer from "../../components/Cargoes/CargoesContainer";
+// import CargoesContainer from "../../components/Cargoes/CargoesContainer";
+import { CargoDashboard } from "../../components/cargoes/dashboard/CargoDashboard";
+import CargoDetailsContainer from "../../components/cargoes/details/CargoDetailsContainer";
 
 const App = () => {
   return (
@@ -17,8 +19,10 @@ const App = () => {
           <Transport />
         </Route> */}
         <Route exact path="/">
-          <CargoesContainer />
+          <CargoDashboard />
         </Route>
+        <Route path="/cargo" render={() => <CargoDetailsContainer />} />
+
       </Switch>
     </Router>
   );
