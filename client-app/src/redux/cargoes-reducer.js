@@ -38,28 +38,28 @@ const cargoesReducer = (state = initialState, action) => {
   }
 };
 
-export const setCargoesAC = (cargoes) => {
+export const setCargoes = (cargoes) => {
   return {
     type: SET_CARGOES,
     cargoes,
   };
 };
 
-export const setCurrentPageAC = (currentPage) => {
+export const setCurrentPage = (currentPage) => {
   return {
     type: SET_CURRENT_PAGE,
     currentPage,
   };
 };
 
-export const setTotalCargoCountAC = (totalCargosCount) => {
+export const setTotalCargoCount = (totalCargosCount) => {
   return {
     type: SET_TOTAL_CARGOS_COUNT,
     count: totalCargosCount,
   };
 };
 
-export const toggleIsFetchingAC = (isFetching) => {
+export const toggleIsFetching = (isFetching) => {
   return {
     type: TOGGLE_IS_FETCHING,
     isFetching,

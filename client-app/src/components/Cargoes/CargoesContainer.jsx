@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import * as axios from "axios";
 import Cargoes from "./Cargoes";
 import {
-  setCargoesAC,
-  setCurrentPageAC,
-  setTotalCargoCountAC,
-  toggleIsFetchingAC,
+  setCargoes,
+  setCurrentPage,
+  setTotalCargoCount,
+  toggleIsFetching,
 } from "../../redux/cargoes-reducer";
 import Loader from "../../app/layout/Loader/Loader";
 
@@ -67,21 +67,26 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setCargoes: (cargoes) => {
-      dispatch(setCargoesAC(cargoes));
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber));
-    },
-    setTotalCargoCount: (totalCount) => {
-      dispatch(setTotalCargoCountAC(totalCount));
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetchingAC(isFetching));
-    },
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     setCargoes: (cargoes) => {
+//       dispatch(setCargoesAC(cargoes));
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber));
+//     },
+//     setTotalCargoCount: (totalCount) => {
+//       dispatch(setTotalCargoCountAC(totalCount));
+//     },
+//     toggleIsFetching: (isFetching) => {
+//       dispatch(toggleIsFetchingAC(isFetching));
+//     },
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CargoesContainer);
+export default connect(mapStateToProps, {
+  setCargoes,
+  setCurrentPage,
+  setTotalCargoCount,
+  toggleIsFetching,
+})(CargoesContainer);
