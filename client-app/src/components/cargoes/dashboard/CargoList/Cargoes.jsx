@@ -57,6 +57,14 @@ const Cargoes = (props) => {
 
   return (
     <div>
+      <div>
+        <NavLink exact to="/createCargo" className={s.add_zakaz}>
+          Додати замовлення
+        </NavLink>
+      </div>
+      <div className={s.news_header}>
+        <span>Замовлення на перевезення</span>
+      </div>
       {props.cargoes.map((cargo) => (
         <div key={cargo.id}>
           <NavLink to={"/cargo/" + cargo.id}>
@@ -82,7 +90,7 @@ const Cargoes = (props) => {
       <div>
         {pages.map((p) => {
           return (
-            <Pagination>
+            <Pagination key={p}>
               <A
                 className={props.currentPage === p && s.selectedPage}
                 onClick={(e) => {

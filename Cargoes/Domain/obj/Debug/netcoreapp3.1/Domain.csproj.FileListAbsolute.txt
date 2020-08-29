@@ -1,0 +1,9 @@
+H:\restful api\Cargoes\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+H:\restful api\Cargoes\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+H:\restful api\Cargoes\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache

@@ -1,0 +1,12 @@
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netstandard2.0\Domain.dll
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.csprojAssemblyReference.cache
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.AssemblyInfoInputs.cache
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.AssemblyInfo.cs
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.csproj.CoreCompileInputs.cache
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netstandard2.0\CargoesDb.deps.json
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netstandard2.0\CargoesDb.dll
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netstandard2.0\Domain.pdb
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.csproj.CopyComplete
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netstandard2.0\CargoesDb.pdb
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.dll
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netstandard2.0\CargoesDb.pdb

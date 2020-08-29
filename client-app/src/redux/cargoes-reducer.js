@@ -1,5 +1,8 @@
+import { cargoesAPI } from "../app/api/agent";
+
 const SET_CARGOES = "SET_CARGOES";
 const SET_CARGO = "SET_CARGO";
+const ADD_CARGO = "ADD_CARGO";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_CARGOS_COUNT = "SET_TOTAL_CARGOS_COUNT";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
@@ -7,7 +10,7 @@ const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 let initialState = {
   cargoes: [],
   cargo: null,
-  pageSize: 4,
+  pageSize: 2,
   totalCargosCount: 0,
   currentPage: 1,
   isFetching: true,
@@ -25,6 +28,8 @@ const cargoesReducer = (state = initialState, action) => {
         ...state,
         cargo: action.cargo,
       };
+    case ADD_CARGO:
+      return [...state, action.payload];
     case SET_CURRENT_PAGE:
       return {
         ...state,
@@ -59,6 +64,13 @@ export const setCargo = (cargo) => {
   };
 };
 
+export const addCargo = (cargo) => {
+  return {
+    type: ADD_CARGO,
+    cargo,
+  };
+};
+
 export const setCurrentPage = (currentPage) => {
   return {
     type: SET_CURRENT_PAGE,
@@ -78,6 +90,24 @@ export const toggleIsFetching = (isFetching) => {
     type: TOGGLE_IS_FETCHING,
     isFetching,
   };
+};
+
+export const getCargoes = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(setCurrentPage(currentPage));
+    dispatch(toggleIsFetching(true));
+    cargoesAPI.getCargoes(currentPage, pageSize).then((data) => {
+      dispatch(toggleIsFetching(false));
+      dispatch(setCargoes(data.data));
+      dispatch(setTotalCargoCount(data.totalRecords));
+    });
+  };
+};
+
+export const getCargo = (id) => (dispatch) => {
+  cargoesAPI.getCargo(id).then((response) => {
+    dispatch(setCargo(response.data.data));
+  });
 };
 
 export default cargoesReducer;

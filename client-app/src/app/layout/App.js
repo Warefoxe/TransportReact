@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "../../components/Navbar/Navbar";
 // import CargoesContainer from "../../components/Cargoes/CargoesContainer";
 import { CargoDashboard } from "../../components/cargoes/dashboard/CargoDashboard";
 import CargoDetailsContainer from "../../components/cargoes/details/CargoDetailsContainer";
+import { Navbar } from "../../components/navbar/Navbar";
+import CargoFormContainer from "../../components/cargoes/form/CargoFormContainer";
+import LoginPage from "../../components/users/login/LoginPage/LoginPage";
 
 const App = () => {
   return (
@@ -17,7 +19,13 @@ const App = () => {
         <Route exact path="/cargo">
           <CargoDashboard />
         </Route>
-        <Route exact path="/cargo/:id" render={() => <CargoDetailsContainer />} />
+        <Route
+          exact
+          path="/cargo/:id"
+          render={() => <CargoDetailsContainer />}
+        />
+        <Route path="/createCargo" component={CargoFormContainer} />
+        <Route path="/login" render={() => <LoginPage />} />
       </Switch>
     </Router>
   );

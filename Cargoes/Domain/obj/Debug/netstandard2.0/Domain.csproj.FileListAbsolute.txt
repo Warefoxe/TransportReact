@@ -1,0 +1,9 @@
+H:\restful api\Cargoes\Domain\bin\Debug\netstandard2.0\Domain.deps.json
+H:\restful api\Cargoes\Domain\bin\Debug\netstandard2.0\Domain.dll
+H:\restful api\Cargoes\Domain\bin\Debug\netstandard2.0\Domain.pdb
+H:\restful api\Cargoes\Domain\obj\Debug\netstandard2.0\Domain.csprojAssemblyReference.cache
+H:\restful api\Cargoes\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfoInputs.cache
+H:\restful api\Cargoes\Domain\obj\Debug\netstandard2.0\Domain.AssemblyInfo.cs
+H:\restful api\Cargoes\Domain\obj\Debug\netstandard2.0\Domain.csproj.CoreCompileInputs.cache
+H:\restful api\Cargoes\Domain\obj\Debug\netstandard2.0\Domain.dll
+H:\restful api\Cargoes\Domain\obj\Debug\netstandard2.0\Domain.pdb

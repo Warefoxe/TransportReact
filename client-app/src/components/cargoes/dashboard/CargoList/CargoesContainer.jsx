@@ -1,44 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as axios from "axios";
 import Cargoes from "./Cargoes";
 import {
   setCargoes,
   setCurrentPage,
   setTotalCargoCount,
   toggleIsFetching,
+  getCargoes,
 } from "../../../../redux/cargoes-reducer";
 import Loader from "../../../../app/layout/Loader/Loader";
 
 class CargoesContainer extends Component {
   componentDidMount() {
-    this.props.toggleIsFetching(true);
-    axios
-      .get(
-        // "http://localhost:59101/api/cargo"
-        `http://localhost:59101/api/cargo?PageNumber=${this.props.currentPage}&PageSize=${this.props.pageSize}`
-      )
-      .then((response) => {
-        this.props.toggleIsFetching(false);
-        // console.log(response);
-        this.props.setCargoes(response.data.data);
-        this.props.setTotalCargoCount(response.data.totalRecords);
-      });
+    this.props.getCargoes(this.props.currentPage, this.props.pageSize);
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-    this.props.toggleIsFetching(true);
-    axios
-      .get(
-        // "http://localhost:59101/api/cargo"
-        `http://localhost:59101/api/cargo?PageNumber=${pageNumber}&PageSize=${this.props.pageSize}`
-      )
-      .then((response) => {
-        this.props.toggleIsFetching(false);
-        // console.log(response);
-        this.props.setCargoes(response.data.data);
-      });
+    this.props.getCargoes(pageNumber, this.props.pageSize);
+    
   };
 
   render() {
@@ -89,4 +68,5 @@ export default connect(mapStateToProps, {
   setCurrentPage,
   setTotalCargoCount,
   toggleIsFetching,
+  getCargoes,
 })(CargoesContainer);

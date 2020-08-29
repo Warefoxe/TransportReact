@@ -1,0 +1,15 @@
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\Domain.dll
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csprojAssemblyReference.cache
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.AssemblyInfoInputs.cache
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.AssemblyInfo.cs
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csproj.CoreCompileInputs.cache
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.deps.json
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.runtimeconfig.json
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.runtimeconfig.dev.json
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.dll
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.pdb
+H:\restful api\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\Domain.pdb
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csproj.CopyComplete
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.dll
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.pdb
+H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.genruntimeconfig.cache

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d1df1f89-42d9-469c-82ed-ad1974b849b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../WebApplication1/.vs/WebApplication1/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApplication1/.vs/WebApplication1/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApplication1/.vs/WebApplication1/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApplication1/.vs/WebApplication1/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/WebApplication1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/WebApplication1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/WebApplication1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/WebApplication1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../WebApplication1/WebApplication1/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cargoes/dashboard/CargoList/Cargoes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cargoes/dashboard/CargoList/Cargoes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cargoes/dashboard/CargoList/Cargoes.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cargoes/dashboard/CargoList/Cargoes.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cargoes/dashboard/CargoList/CargoesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cargoes/dashboard/CargoList/CargoesContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cargoes/details/CargoDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cargoes/details/CargoDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cargoes/details/CargoDetailsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cargoes/details/CargoDetailsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/cargoes-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/cargoes-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1gfszGhgTNmdEcD8mbDl06XvXip" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1df1f89-42d9-469c-82ed-ad1974b849b9" name="Default Changelist" comment="" />
+      <created>1598517244441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598517244441</updated>
+      <workItem from="1598517256759" duration="19000" />
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,32 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import s from "./Navbar.module.css";
+import logo from "../../assets/img/logo2.png";
 import { NavLink } from "react-router-dom";
+import Burger from "./Burger/Burger";
 
-const Nav = styled.div`
-  a {
-    color: #000000;
-    font-size: 15px;
-    font-weight: 500;
-    margin-left: 30px;
-    transition: 0.2s linear;
-  }
-
-  a.active {
-    color: #01bedc !important;
-  }
-`;
-
-const Navbar = () => {
+export const Navbar = () => {
   return (
-    <Nav>
-      <NavLink exact to="/" activeClassName="active">
-        Cargoes
-      </NavLink>
-      <NavLink exact to="/transport" activeClassName="active">
-        Transports
-      </NavLink>
-    </Nav>
+    <nav className={s.navbar}>
+      <div className={s.inner_width}>
+        <NavLink to="/">
+          <img className={s.logo} src={logo} alt="logo" />
+        </NavLink>
+        <Burger />
+      </div>
+    </nav>
   );
 };
-
-export default Navbar;

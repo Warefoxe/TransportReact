@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Loader from "../../../app/layout/Loader/Loader";
 
+const DIV = styled.div`
+  background-color: transparent;
+  width: 100%;
+  height: 800px;
+`;
+
 const Name = styled.h3`
   padding: 7px 15px;
   border: 1px solid #c1bdbd;
@@ -38,25 +44,23 @@ const CargoDetails = (props) => {
   }
 
   return (
-    <div>
-      <div>
-        <Name>{props.cargo.name}</Name>
-        <Body>
-          <Desc>
-            <Weight>
-              <b>Вага: </b>
-              {"cargo.weight"} кг.
-            </Weight>
-          </Desc>
-          <Desc>
-            <Description>
-              <b>Деталі замовлення: </b>
-              {"cargo.description"}
-            </Description>
-          </Desc>
-        </Body>
-      </div>
-    </div>
+    <DIV>
+      <Name>{props.cargo.name}</Name>
+      <Body>
+        <Desc>
+          <Weight>
+            <b>Вага: </b>
+            {"cargo.weight"} кг.
+          </Weight>
+        </Desc>
+        <Desc>
+          <Description>
+            <b>Деталі замовлення: </b>
+            {"cargo.description"}
+          </Description>
+        </Desc>
+      </Body>
+    </DIV>
   );
 };
 
