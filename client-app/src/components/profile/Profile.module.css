@@ -1,0 +1,13 @@
+.profile_info {
+  width: calc(100% - 20px);
+  max-width: 500px;
+  background-color: rgb(255, 255, 255);
+  padding: 50px 40px;
+}
+
+.profile_info h1 {
+  text-align: center;
+  margin: 48px 0;
+  font-size: 36px;
+  color: #111;
+}

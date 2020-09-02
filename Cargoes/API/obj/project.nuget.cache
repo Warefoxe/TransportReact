@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZcusWWh2im86CHR/dWBWX6y7nCXDmI5qHG70022SpXf3nBIN6EJFCqeXhSJ5rjrdt/NDqElWNiFxmaQeghZITg==",
+  "dgSpecHash": "3beK2S+v5FWd/FkEIgADOBgfjYjU0W7k6s4LXlnru1SUvhD73B9hK7f2J04Z3FjFAGvxD5gD+3f1Bogc4m22aQ==",
   "success": true,
-  "projectFilePath": "H:\\restful api\\Cargoes\\API\\API.csproj",
+  "projectFilePath": "H:\\react\\dotnet3\\Cargoes\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juras\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\juras\\.nuget\\packages\\fluentvalidation\\9.1.3\\fluentvalidation.9.1.3.nupkg.sha512",

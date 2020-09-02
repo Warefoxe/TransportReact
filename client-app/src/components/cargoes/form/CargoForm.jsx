@@ -68,7 +68,6 @@ const CargoForm = (props) => {
           onSubmit={(e) => {
             e.preventDefault();
             axios.post("http://localhost:44351/api/cargo").then((cargo) => {
-              debugger;
               let newCargo = {
                 ...cargo,
                 id: this.props.cargoes.length + 1,

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ydbMt61+nf2Dyb0b3H7i5PcOJs6Rw+jRYJWrWNZnUTcefv7um/FSNqrzx5R0kX9xs4EEXXvtWUd9DTBdSENJqg==",
+  "dgSpecHash": "0ljAhtwj7LawAKhqpXd+F6f39ViHKq2YB+x2LmkKhQg4JhG4Hh6aetl3i3P3nYaZCpxLWSeqr6fi9sgJjrgpZw==",
   "success": true,
-  "projectFilePath": "H:\\restful api\\Cargoes\\CargoesDb\\CargoesDb.csproj",
+  "projectFilePath": "H:\\react\\dotnet3\\Cargoes\\CargoesDb\\CargoesDb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juras\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\juras\\.nuget\\packages\\fluentvalidation\\9.1.3\\fluentvalidation.9.1.3.nupkg.sha512",

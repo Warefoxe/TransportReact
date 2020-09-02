@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import RightNav from "./RightNav";
-import { profile } from "../../../redux/auth-reducer";
+import { getAuthUserData, logout } from "../../../redux/auth-reducer";
 
 class RightNavContainer extends Component {
   componentDidMount() {
-    this.props.profile();
+    this.props.getAuthUserData();
   }
 
   render() {
@@ -14,8 +14,10 @@ class RightNavContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  currentUser: state.auth.currentUser
-})
+  isAuth: state.auth.isAuth,
+  displayName: state.auth.displayName,
+});
 
-
-export default connect(mapStateToProps, {profile})(RightNavContainer);
+export default connect(mapStateToProps, { getAuthUserData, logout })(
+  RightNavContainer
+);

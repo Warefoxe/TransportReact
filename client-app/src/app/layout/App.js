@@ -7,6 +7,7 @@ import CargoDetailsContainer from "../../components/cargoes/details/CargoDetails
 import { Navbar } from "../../components/navbar/Navbar";
 import CargoFormContainer from "../../components/cargoes/form/CargoFormContainer";
 import LoginPage from "../../components/users/login/LoginPage/LoginPage";
+import Profile from "../../components/profile/Profile";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         />
         <Route path="/createCargo" component={CargoFormContainer} />
         <Route path="/login" render={() => <LoginPage />} />
+        <Route path="/profile" component={Profile} />
       </Switch>
     </Router>
   );

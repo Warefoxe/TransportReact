@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\restful api\\Cargoes\\Domain\\Domain.csproj": {}
+    "H:\\react\\dotnet3\\Cargoes\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "H:\\restful api\\Cargoes\\Domain\\Domain.csproj": {
+    "H:\\react\\dotnet3\\Cargoes\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\restful api\\Cargoes\\Domain\\Domain.csproj",
+        "projectUniqueName": "H:\\react\\dotnet3\\Cargoes\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "H:\\restful api\\Cargoes\\Domain\\Domain.csproj",
+        "projectPath": "H:\\react\\dotnet3\\Cargoes\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\juras\\.nuget\\packages\\",
-        "outputPath": "H:\\restful api\\Cargoes\\Domain\\obj\\",
+        "outputPath": "H:\\react\\dotnet3\\Cargoes\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\juras\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+22r4UEKI7E75Vek1CwF0ni30ggLzjtVL5QLr2oI+LRCPVBnYt5tyCFs2o5jNKt5bRr2GXz+ojwnxd+ecI1bWg==",
+  "dgSpecHash": "ZQrCeZ9njXKNRDMzMeCVjIslssaEkgxzMb+s1W/3cU2plE5t7bH6z6kuW8oXCj++qS1mKOd8eC9RmA2sFGdQKA==",
   "success": true,
-  "projectFilePath": "H:\\restful api\\Cargoes\\Domain\\Domain.csproj",
+  "projectFilePath": "H:\\react\\dotnet3\\Cargoes\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juras\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.7\\microsoft.aspnetcore.cryptography.internal.3.1.7.nupkg.sha512",
     "C:\\Users\\juras\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.7\\microsoft.aspnetcore.cryptography.keyderivation.3.1.7.nupkg.sha512",

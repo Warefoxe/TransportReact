@@ -1,25 +1,27 @@
 import { authAPI } from "../app/api/agent";
 import * as axios from "axios";
 
-const LOGIN_USER = "LOGIN_USER";
+const SET_USER_DATA = "SET_USER_DATA";
 
 let initialState = {
-  currentUser: {},
+  displayName: null,
+  userName: null,
+  isAuth: false,
 };
 
 const authReducer = (state = initialState, action) => {
   //App -> Profile -> MyPosts
   switch (action.type) {
-    case LOGIN_USER:
-      return { ...state, currentUser: action.payload };
+    case SET_USER_DATA:
+      return { ...state, ...action.payload };
     default:
       return state;
   }
 };
 
-export const loginUser = (userObj) => ({
-  type: LOGIN_USER,
-  payload: userObj,
+export const setAuthUserData = (displayName, userName, isAuth) => ({
+  type: SET_USER_DATA,
+  payload: { displayName, userName, isAuth },
 });
 
 export function setAuthorizationToken(token) {
@@ -30,18 +32,7 @@ export function setAuthorizationToken(token) {
   }
 }
 
-export const login = (email, password) => (dispatch) => {
-  authAPI.login(email, password).then((response) => {
-    const token = response.data.token;
-    localStorage.setItem("jwtToken", token);
-    // axios.defaults.headers.common["Authorization"] = token;
-    // console.log(JwtDecode(token));
-    dispatch(loginUser(response.data));
-    // console.log(dispatch(loginUser(response.data)));
-  });
-};
-
-export const profile = () => (dispatch) => {
+export const getAuthUserData = () => (dispatch) => {
   const token = localStorage.jwtToken;
   axios
     .get("https://localhost:44351/api/user", {
@@ -49,9 +40,28 @@ export const profile = () => (dispatch) => {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((response) => {
+      let { displayName, userName } = response.data;
       // setAuthorizationToken(token);
-      dispatch(loginUser(response.data));
+      dispatch(setAuthUserData(displayName, userName, true));
     });
+};
+
+export const login = (email, password) => (dispatch) => {
+  authAPI.login(email, password).then((response) => {
+    const token = response.data.token;
+    localStorage.setItem("jwtToken", token);
+    // axios.defaults.headers.common["Authorization"] = token;
+    // console.log(JwtDecode(token));
+    // setAuthorizationToken(token);
+    dispatch(getAuthUserData());
+    // console.log(dispatch(loginUser(response.data)));
+  });
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem("jwtToken");
+  // setAuthorizationToken(false);
+  dispatch(setAuthUserData(null, null, false));
 };
 
 export default authReducer;

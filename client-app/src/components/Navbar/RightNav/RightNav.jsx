@@ -79,7 +79,6 @@ const navs = [
 ];
 
 const RightNav = (props) => {
-  debugger;
   return (
     <>
       <Nav open={props.open}>
@@ -93,10 +92,15 @@ const RightNav = (props) => {
             {navItem.name}
           </NavLink>
         ))}
+        {props.isAuth ? (
+          <div>
+            {props.displayName} -{" "}
+            <button onClick={props.logout}>Вийти</button>
+          </div>
+        ) : (
+          <NavLink to="/login">Логін/Реєстрація</NavLink>
+        )}
       </Nav>
-      {props.currentUser.displayName ? (
-        <button>Log Out</button>
-      ) : null}
     </>
   );
 };

@@ -7,3 +7,12 @@ H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
 H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
 H:\restful api\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+H:\react\dotnet3\Cargoes\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+H:\react\dotnet3\Cargoes\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+H:\react\dotnet3\Cargoes\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+H:\react\dotnet3\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+H:\react\dotnet3\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+H:\react\dotnet3\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+H:\react\dotnet3\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+H:\react\dotnet3\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+H:\react\dotnet3\Cargoes\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
