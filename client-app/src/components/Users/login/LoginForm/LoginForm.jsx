@@ -5,6 +5,7 @@ import s from "./LoginForm.module.css";
 import { NavLink } from "react-router-dom";
 import { Input } from "../../../../app/layout/FormControls/FormControls";
 import { required } from "../../../../utils/validators/validators";
+import error from "../../../../app/layout/FormControls/FormControls.module.css";
 
 const Button = styled.button`
   display: block;
@@ -47,6 +48,7 @@ const LoginForm = (props) => {
           />
           <div className={s.placeholder}>Пароль</div>
         </div>
+        { props.error && <div className={error.form_summary_error}>{props.error}</div>}
         <Button className={s.btn}>Увійти</Button>
         <NavLink exact to="/cargo">
           Реєстрація

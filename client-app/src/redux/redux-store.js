@@ -3,8 +3,9 @@ import thunkMiddleware from "redux-thunk";
 import cargoesReducer from "./cargoes-reducer";
 import usersReducer from "./users-reducer";
 import burgerReducer from "./burger-reducer";
-import { reducer as formReducer } from 'redux-form'
+import { reducer as formReducer } from "redux-form";
 import authReducer, { setAuthorizationToken } from "./auth-reducer";
+import appReducer from "./app-reducer";
 
 let reducers = combineReducers({
   cargoesPage: cargoesReducer,
@@ -12,6 +13,7 @@ let reducers = combineReducers({
   burger: burgerReducer,
   auth: authReducer,
   form: formReducer,
+  app: appReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
