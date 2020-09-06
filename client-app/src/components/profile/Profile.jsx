@@ -3,10 +3,10 @@ import s from "./Profile.module.css";
 
 const Profile = (props) => {
   return (
-    <div className={s.profile_info}>
+    <section className="container">
       <h1>Profile</h1>
       {props.displayName}
-    </div>
+    </section>
   );
 };
 

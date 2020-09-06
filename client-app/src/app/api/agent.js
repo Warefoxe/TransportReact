@@ -25,4 +25,12 @@ export const authAPI = {
   login(email, password) {
     return instance.post(`user/login`, { email, password });
   },
+  register(displayName, userName, email, password) {
+    return instance.post(`user/register`, {
+      displayName,
+      userName,
+      email,
+      password,
+    });
+  },
 };

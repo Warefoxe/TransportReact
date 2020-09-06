@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +17,8 @@ import { connect } from "react-redux";
 import { initialize } from "../../redux/app-reducer";
 import { compose } from "redux";
 import Loader from "./Loader/Loader";
+import RegisterPage from "../../components/users/register/RegisterPage/RegisterPage";
+import RegisterForm from "../../components/users/register/RegisterForm/RegisterForm";
 
 class App extends Component {
   componentDidMount() {
@@ -29,8 +31,8 @@ class App extends Component {
 
     return (
       <Router>
-        <Navbar />
-        <Switch>
+        <Fragment>
+          <Navbar />
           {/* <Route exact path="/transport">
             <Transport />
           </Route> */}
@@ -43,9 +45,15 @@ class App extends Component {
             render={() => <CargoDetailsContainer />}
           />
           <Route path="/createCargo" component={CargoFormContainer} />
-          <Route path="/login" render={() => <LoginPage />} />
           <Route path="/profile" component={ProfileContainer} />
-        </Switch>
+
+          <section className="container">
+            <Switch>
+              <Route exact path="/register" component={RegisterForm}></Route>
+              <Route exact path="/login" component={LoginPage}></Route>
+            </Switch>
+          </section>
+        </Fragment>
       </Router>
     );
   }

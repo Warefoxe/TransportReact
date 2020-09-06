@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const Nav = styled.div`
+const Nav = styled.nav`
   a {
     color: #000000;
     font-size: 15px;
@@ -45,26 +45,26 @@ const navs = [
     path: "/cargo",
     name: "Вантаж",
   },
-  {
-    id: 2,
-    path: "/transport",
-    name: "Транспорт",
-  },
-  {
-    id: 3,
-    path: "/faq",
-    name: "Питання-відповідь",
-  },
-  {
-    id: 4,
-    path: "/messages",
-    name: "Повідомлення",
-  },
-  {
-    id: 5,
-    path: "/news",
-    name: "Новини",
-  },
+  // {
+  //   id: 2,
+  //   path: "/transport",
+  //   name: "Транспорт",
+  // },
+  // {
+  //   id: 3,
+  //   path: "/faq",
+  //   name: "Питання-відповідь",
+  // },
+  // {
+  //   id: 4,
+  //   path: "/messages",
+  //   name: "Повідомлення",
+  // },
+  // {
+  //   id: 5,
+  //   path: "/news",
+  //   name: "Новини",
+  // },
 
   // {
   //   id: 6,
@@ -93,12 +93,14 @@ const RightNav = (props) => {
           </NavLink>
         ))}
         {props.isAuth ? (
-          <div>
-            {props.displayName} -{" "}
-            <button onClick={props.logout}>Вийти</button>
-          </div>
+          <NavLink to="/profile">
+            {props.displayName} - <button onClick={props.logout}>Вийти</button>
+          </NavLink>
         ) : (
-          <NavLink to="/login">Логін/Реєстрація</NavLink>
+          <>
+            <NavLink to="/login">Логін</NavLink>
+            <NavLink to="/register">Реєстрація</NavLink>
+          </>
         )}
       </Nav>
     </>
