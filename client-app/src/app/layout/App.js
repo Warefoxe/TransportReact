@@ -19,6 +19,7 @@ import { compose } from "redux";
 import Loader from "./Loader/Loader";
 import RegisterPage from "../../components/users/register/RegisterPage/RegisterPage";
 import RegisterForm from "../../components/users/register/RegisterForm/RegisterForm";
+import Cargo from "../../components/cargoes/dashboard/Cargo/Cargo";
 
 class App extends Component {
   componentDidMount() {
@@ -36,6 +37,8 @@ class App extends Component {
           {/* <Route exact path="/transport">
             <Transport />
           </Route> */}
+          <Route exact path="/" component={Cargo} />
+
           <Route exact path="/cargo">
             <CargoDashboard />
           </Route>
@@ -44,11 +47,11 @@ class App extends Component {
             path="/cargo/:id"
             render={() => <CargoDetailsContainer />}
           />
-          <Route path="/createCargo" component={CargoFormContainer} />
           <Route path="/profile" component={ProfileContainer} />
 
           <section className="container">
             <Switch>
+              <Route exact path="/createCargo" component={CargoFormContainer} />
               <Route exact path="/register" component={RegisterForm}></Route>
               <Route exact path="/login" component={LoginPage}></Route>
             </Switch>

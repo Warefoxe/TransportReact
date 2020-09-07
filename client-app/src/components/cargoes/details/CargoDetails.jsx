@@ -44,23 +44,25 @@ const CargoDetails = (props) => {
   }
 
   return (
-    <DIV>
-      <Name>{props.cargo.name}</Name>
-      <Body>
-        <Desc>
-          <Weight>
-            <b>Вага: </b>
-            {"cargo.weight"} кг.
-          </Weight>
-        </Desc>
-        <Desc>
-          <Description>
-            <b>Деталі замовлення: </b>
-            {"cargo.description"}
-          </Description>
-        </Desc>
-      </Body>
-    </DIV>
+    <section className="container">
+      <DIV>
+        <Name>{props.cargo.name}</Name>
+        <Body>
+          <Desc>
+            <Weight>
+              <b>Вага: </b>
+              {props.cargo.weight} кг.
+            </Weight>
+          </Desc>
+          <Desc>
+            <Description>
+              <b>Деталі замовлення: </b>
+              {props.cargo.description}
+            </Description>
+          </Desc>
+        </Body>
+      </DIV>
+    </section>
   );
 };
 

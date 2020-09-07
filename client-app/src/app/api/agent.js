@@ -16,6 +16,13 @@ export const cargoesAPI = {
   getCargo(id) {
     return instance.get(`cargo/${id}`);
   },
+  createCargo(name, weight, description) {
+    return instance.post(`cargo`, {
+      name,
+      weight,
+      description,
+    });
+  },
 };
 
 export const authAPI = {

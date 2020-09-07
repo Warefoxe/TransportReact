@@ -1,43 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import * as axios from "axios";
-
-const Section = styled.section`
-  height: 100vh;
-  min-height: 500px;
-`;
-
-const Div = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
-`;
-
-const Form = styled.form`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-
-const TextArea = styled.textarea`
-  width: 100%;
-  height: 40px;
-  margin: 10px 0;
-  outline: none;
-  padding: 20px;
-  min-height: 200px;
-  resize: vertical;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  height: 40px;
-  margin: 10px 0;
-  outline: none;
-  padding: 20px;
-`;
+import { cargoesAPI } from "../../../app/api/agent";
 
 const Button = styled.button`
   width: 100%;
@@ -60,42 +23,99 @@ const Button = styled.button`
   }
 `;
 
-const CargoForm = (props) => {
+const CargoForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    weight: "",
+    description: "",
+  });
+
+  const { name, weight, description } = formData;
+
+  const onChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    try {
+      cargoesAPI.createCargo(name, weight, description);
+    } catch (error) {}
+  };
+
   return (
-    <Section>
-      <Div>
-        <Form
-          onSubmit={(e) => {
-            e.preventDefault();
-            axios.post("http://localhost:44351/api/cargo").then((cargo) => {
-              let newCargo = {
-                ...cargo,
-                id: this.props.cargoes.length + 1,
-              };
-              console.log(newCargo);
-              // this.props.addCargo(newCargo);
-            });
-          }}
-        >
-          <Input
-            onChange={props.handleInputChange}
+    <>
+      <h1 className="large dark-color">Створення вантажу</h1>
+      <p className="lead">Створіть свій вантаж, який ви хочете перевезти</p>
+      <form className="form" onSubmit={(e) => onSubmit(e)}>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Назва вантажу"
             name="name"
-            placeholder="Name"
-          ></Input>
-          <Input
-            onChange={props.handleInputChange}
+            value={name}
+            onChange={(e) => onChange(e)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Вага вантажу"
             name="weight"
-            placeholder="Weight"
-          ></Input>
-          <TextArea
-            onChange={props.handleInputChange}
+            value={weight}
+            onChange={(e) => onChange(e)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <textarea
+            type="text"
+            placeholder="Опис вантажу"
             name="description"
-            placeholder="Description"
-          ></TextArea>
-          <Button type="submit">Опублікувати перевезення</Button>
-        </Form>
-      </Div>
-    </Section>
+            value={description}
+            onChange={(e) => onChange(e)}
+            required
+          />
+        </div>
+        <Button type="submit">Опублікувати перевезення</Button>
+      </form>
+    </>
+
+    // <Section>
+    //   <Div>
+    //     <Form
+    //       onSubmit={(e) => {
+    //         e.preventDefault();
+    //         axios.post("http://localhost:44351/api/cargo").then((cargo) => {
+    //           let newCargo = {
+    //             ...cargo,
+    //             id: this.props.cargoes.length + 1,
+    //           };
+    //           console.log(newCargo);
+    //           // this.props.addCargo(newCargo);
+    //         });
+    //       }}
+    //     >
+    //       <Input
+    //         onChange={props.handleInputChange}
+    //         name="name"
+    //         placeholder="Name"
+    //       ></Input>
+    //       <Input
+    //         onChange={props.handleInputChange}
+    //         name="weight"
+    //         placeholder="Weight"
+    //       ></Input>
+    //       <TextArea
+    //         onChange={props.handleInputChange}
+    //         name="description"
+    //         placeholder="Description"
+    //       ></TextArea>
+    //       <Button type="submit">Опублікувати перевезення</Button>
+    //     </Form>
+    //   </Div>
+    // </Section>
   );
 };
 
