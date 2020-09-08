@@ -13,3 +13,18 @@ H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csproj.CopyCo
 H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.dll
 H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.pdb
 H:\restful api\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.genruntimeconfig.cache
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.deps.json
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.runtimeconfig.json
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.runtimeconfig.dev.json
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.dll
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\CargoesDb.pdb
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\Domain.dll
+H:\react\dotnet3\Cargoes\CargoesDb\bin\Debug\netcoreapp3.1\Domain.pdb
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csprojAssemblyReference.cache
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.AssemblyInfoInputs.cache
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.AssemblyInfo.cs
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csproj.CoreCompileInputs.cache
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.csproj.CopyComplete
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.dll
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.pdb
+H:\react\dotnet3\Cargoes\CargoesDb\obj\Debug\netcoreapp3.1\CargoesDb.genruntimeconfig.cache

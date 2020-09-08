@@ -68,13 +68,13 @@ namespace API.Controllers
         {
             if (await _context.Users.Where(x => x.Email == register.Email).AnyAsync())
             {
-                throw new RestException(HttpStatusCode.BadRequest, new { Email = "Email alredy exists" });
+                throw new RestException(HttpStatusCode.BadRequest, new { Email = "Така електронна пошта вже існує" });
             }
 
-            if (await _context.Users.Where(x => x.UserName == register.UserName).AnyAsync())
-            {
-                throw new RestException(HttpStatusCode.BadRequest, new { UserName = "Username alredy exists" });
-            }
+            //if (await _context.Users.Where(x => x.UserName == register.UserName).AnyAsync())
+            //{
+            //    throw new RestException(HttpStatusCode.BadRequest, new { UserName = "Username alredy exists" });
+            //}
 
             var user = new AppUser
             {

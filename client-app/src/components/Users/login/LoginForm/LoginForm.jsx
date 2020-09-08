@@ -4,7 +4,7 @@ import s from "./LoginForm.module.css";
 import { NavLink } from "react-router-dom";
 import { Input } from "../../../../app/layout/FormControls/FormControls";
 import { required } from "../../../../utils/validators/validators";
-import error from "../../../../app/layout/FormControls/FormControls.module.css";
+// import error from "../../../../app/layout/FormControls/FormControls.module.css";
 
 const LoginForm = (props) => {
   return (
@@ -32,9 +32,9 @@ const LoginForm = (props) => {
             type="password"
           />
         </div>
-        {props.error && (
+        {/* {props.error && (
           <div className={error.form_summary_error}>{props.error}</div>
-        )}
+        )} */}
         <button className="btn btn-primary">Увійти</button>
         <p className="my-1">
           Не маєте облікового запису?{" "}

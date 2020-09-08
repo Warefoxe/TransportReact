@@ -1,6 +1,7 @@
 ﻿using API.Error;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,14 @@ using System.Threading.Tasks;
 
 namespace API.Middleware
 {
-    public class ErrorHandlingMiddleware
+      public class ErrorHandlingMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<ErrorHandlingMiddleware> _logger;
-
         public ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandlingMiddleware> logger)
         {
-            _next = next;
             _logger = logger;
+            _next = next;
         }
 
         public async Task Invoke(HttpContext context)
@@ -26,7 +26,7 @@ namespace API.Middleware
             try
             {
                 await _next(context);
-            }
+            } 
             catch (Exception ex)
             {
                 await HandleExceptionAsync(context, ex, _logger);
@@ -52,10 +52,9 @@ namespace API.Middleware
             }
 
             context.Response.ContentType = "application/json";
-
             if (errors != null)
             {
-                var result = JsonSerializer.Serialize(new
+                var result = JsonConvert.SerializeObject(new 
                 {
                     errors
                 });

@@ -17,9 +17,9 @@ import { connect } from "react-redux";
 import { initialize } from "../../redux/app-reducer";
 import { compose } from "redux";
 import Loader from "./Loader/Loader";
-import RegisterPage from "../../components/users/register/RegisterPage/RegisterPage";
 import RegisterForm from "../../components/users/register/RegisterForm/RegisterForm";
 import Cargo from "../../components/cargoes/dashboard/Cargo/Cargo";
+import Alert from "./Alert";
 
 class App extends Component {
   componentDidMount() {
@@ -50,6 +50,7 @@ class App extends Component {
           <Route path="/profile" component={ProfileContainer} />
 
           <section className="container">
+            <Alert />
             <Switch>
               <Route exact path="/createCargo" component={CargoFormContainer} />
               <Route exact path="/register" component={RegisterForm}></Route>

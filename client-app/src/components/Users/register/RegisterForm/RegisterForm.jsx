@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { authAPI } from "../../../../app/api/agent";
+import { connect } from "react-redux";
+import { setAlert } from "../../../../redux/alert-reducer";
+import { register } from "../../../../redux/auth-reducer";
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
   const [formData, setFormData] = useState({
     displayName: "",
     userName: "",
@@ -20,12 +22,9 @@ const RegisterForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Паролі не співпадають");
+      props.setAlert("Паролі не співпадають", "danger");
     } else {
-      try {
-        authAPI.register(displayName, userName, email, password);
-      } catch (error) {
-      }
+        props.register(displayName, userName, email, password);
     }
   };
 
@@ -41,7 +40,6 @@ const RegisterForm = () => {
             name="displayName"
             value={displayName}
             onChange={(e) => onChange(e)}
-            required
           />
         </div>
         <div className="form-group">
@@ -51,7 +49,6 @@ const RegisterForm = () => {
             name="userName"
             value={userName}
             onChange={(e) => onChange(e)}
-            required
           />
         </div>
         <div className="form-group">
@@ -61,7 +58,6 @@ const RegisterForm = () => {
             name="email"
             value={email}
             onChange={(e) => onChange(e)}
-            required
           />
         </div>
         <div className="form-group">
@@ -69,7 +65,6 @@ const RegisterForm = () => {
             type="password"
             placeholder="Пароль"
             name="password"
-            minLength="6"
             value={password}
             onChange={(e) => onChange(e)}
           />
@@ -79,7 +74,6 @@ const RegisterForm = () => {
             type="password"
             placeholder="Підтвердьте пароль"
             name="password2"
-            minLength="6"
             value={password2}
             onChange={(e) => onChange(e)}
           />
@@ -93,4 +87,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default connect(null, { setAlert, register })(RegisterForm);
