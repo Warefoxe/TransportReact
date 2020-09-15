@@ -330,9 +330,6 @@ H:\react\dotnet3\Cargoes\API\bin\Debug\netcoreapp3.1\CargoesDb.pdb
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.csprojAssemblyReference.cache
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.AssemblyInfoInputs.cache
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.AssemblyInfo.cs
-H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
-H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
-H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.RazorTargetAssemblyInfo.cache
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.csproj.CopyComplete
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.Manifest.cache
@@ -340,3 +337,10 @@ H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticW
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.dll
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.pdb
 H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.genruntimeconfig.cache
+H:\react\dotnet3\Cargoes\API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+H:\react\dotnet3\Cargoes\API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+H:\react\dotnet3\Cargoes\API\bin\Debug\netcoreapp3.1\Castle.Core.dll
+H:\react\dotnet3\Cargoes\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
+H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
+H:\react\dotnet3\Cargoes\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache

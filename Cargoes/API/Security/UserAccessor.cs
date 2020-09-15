@@ -18,8 +18,12 @@ namespace API.Security
 
         public string GetCurrentUserName()
         {
-            var userName = _httpContextAccessor.HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+            //string id = _httpContextAccessor.HttpContext.User.Claims.ToList()[0].Value;
 
+            //var userName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var userName = _httpContextAccessor.HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+            //var userName = _httpContextAccessor.HttpContext.User.Identity.Name;
+            //var userName = _httpContextAccessor.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier).Value;
             return userName;
         }
     }

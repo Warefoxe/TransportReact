@@ -99,14 +99,14 @@ export const getCargoes = (currentPage, pageSize) => {
     cargoesAPI.getCargoes(currentPage, pageSize).then((data) => {
       dispatch(toggleIsFetching(false));
       dispatch(setCargoes(data.data));
-      dispatch(setTotalCargoCount(data.totalRecords));
+      dispatch(setTotalCargoCount(data.meta.totalCount));
     });
   };
 };
 
 export const getCargo = (id) => (dispatch) => {
   cargoesAPI.getCargo(id).then((response) => {
-    dispatch(setCargo(response.data.data));
+    dispatch(setCargo(response.data));
   });
 };
 

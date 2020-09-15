@@ -1,0 +1,14 @@
+.footer_bottom {
+  background: #28436d;
+  padding: 30px 0;
+}
+
+.footer_bottom_content {
+  text-align: center;
+}
+
+.footer_bottom_content span {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}

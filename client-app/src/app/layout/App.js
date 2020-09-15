@@ -20,6 +20,7 @@ import Loader from "./Loader/Loader";
 import RegisterForm from "../../components/users/register/RegisterForm/RegisterForm";
 import Cargo from "../../components/cargoes/dashboard/Cargo/Cargo";
 import Alert from "./Alert";
+// import Footer from "../../components/footer/Footer";
 
 class App extends Component {
   componentDidMount() {
@@ -58,6 +59,7 @@ class App extends Component {
             </Switch>
           </section>
         </Fragment>
+        {/* <Footer /> */}
       </Router>
     );
   }

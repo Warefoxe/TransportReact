@@ -43,11 +43,16 @@ const CargoDetails = (props) => {
     return <Loader />;
   }
 
+  
   return (
     <section className="container">
       <DIV>
         <Name>{props.cargo.name}</Name>
         <Body>
+          <Desc>
+            <b>Профіль замовника: </b>
+            {/* {props.cargo.attendees[0].displayName} */}
+          </Desc>
           <Desc>
             <Weight>
               <b>Вага: </b>

@@ -1,8 +1,10 @@
 using API.cargoM;
 using API.Interfaces;
 using API.Middleware;
+using API.Repository;
 using API.Security;
 using API.Services;
+using AutoMapper;
 using CargoesDb;
 using Domain;
 using FluentValidation.AspNetCore;
@@ -36,6 +38,7 @@ namespace API
         {
             services.AddDbContext<ApplicationDbContext>(opt =>
             {
+                opt.UseLazyLoadingProxies();
                 opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
 
@@ -51,12 +54,12 @@ namespace API
             });
 
             services.AddMediatR(typeof(List.Handler).Assembly);
+            services.AddAutoMapper(typeof(List.Handler));
 
-
-            services.AddControllers().AddFluentValidation(cfg =>
-            {
-                cfg.RegisterValidatorsFromAssemblyContaining<Create>();
-            });
+            //services.AddControllers().AddFluentValidation(cfg =>
+            //{
+            //    cfg.RegisterValidatorsFromAssemblyContaining<Create>();
+            //});
 
             services.AddIdentity<AppUser, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -65,18 +68,36 @@ namespace API
 
 
 
+            //var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["TokenKey"]));
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(opt =>
+            //    {
+            //        opt.TokenValidationParameters = new TokenValidationParameters
+            //        {
+            //            ValidateIssuerSigningKey = true,
+            //            IssuerSigningKey = key,
+            //            ValidateAudience = false,
+            //            ValidateIssuer = false
+            //        };
+            //    });
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["TokenKey"]));
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(opt =>
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(opt =>
+            {
+                opt.RequireHttpsMetadata = false;
+                opt.SaveToken = true;
+                opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    opt.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = key,
-                        ValidateAudience = false,
-                        ValidateIssuer = false
-                    };
-                });
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = key,
+                    ValidateAudience = false,
+                    ValidateIssuer = false
+                };
+            });
 
             services.AddSingleton<IUriService>(o =>
             {
@@ -88,6 +109,11 @@ namespace API
 
             services.AddScoped<IJwtToken, JwtToken>();
             services.AddScoped<IUserAccessor, UserAccessor>();
+            services.AddTransient<ICargoService, CargoService>();
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            services.AddControllers();
 
             #region Swagger
             services.AddSwaggerGen(options =>

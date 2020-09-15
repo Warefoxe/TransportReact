@@ -1,15 +1,22 @@
-import React from "react";
-import s from "./Loader.module.css";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
-const Loader = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
+
+export default function Loader() {
+  const classes = useStyles();
+
   return (
-    <div className={s.lds_ring}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className={classes.root}>
+      <LinearProgress />
     </div>
   );
-};
-
-export default Loader;
+}
