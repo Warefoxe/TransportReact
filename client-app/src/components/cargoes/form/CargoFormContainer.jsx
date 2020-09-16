@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addCargo } from "../../../redux/cargoes-reducer";
+import { createCargo } from "../../../redux/cargoes-reducer";
 import CargoForm from "./CargoForm";
 import { withAuthRedirect } from "../../../hoc/withAuthRedirect";
 import { compose } from "redux";
@@ -17,6 +17,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-  connect(mapStateToProps, { addCargo }),
+  connect(mapStateToProps, { createCargo }),
   withAuthRedirect
 )(CargoFormContainer);

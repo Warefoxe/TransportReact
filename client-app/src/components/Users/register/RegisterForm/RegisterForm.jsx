@@ -24,7 +24,7 @@ const RegisterForm = (props) => {
     if (password !== password2) {
       props.setAlert("Паролі не співпадають", "danger");
     } else {
-        props.register(displayName, userName, email, password);
+      props.register(displayName, userName, email, password);
     }
   };
 

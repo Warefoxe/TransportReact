@@ -157,7 +157,6 @@ namespace API.Controllers
 
             //var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == _userAccessor.GetCurrentUserName());
 
-
             //var attendee = new UserCargo
             //{
             //    AppUser = user,

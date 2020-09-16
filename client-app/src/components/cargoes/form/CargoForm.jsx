@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { cargoesAPI } from "../../../app/api/agent";
 
 const Button = styled.button`
   width: 100%;
@@ -23,7 +23,7 @@ const Button = styled.button`
   }
 `;
 
-const CargoForm = () => {
+const CargoForm = (props) => {
   const [formData, setFormData] = useState({
     name: "",
     weight: "",
@@ -38,13 +38,14 @@ const CargoForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    try {
-      cargoesAPI.createCargo(name, weight, description);
-    } catch (error) {}
+    props.createCargo(name, weight, description);
   };
 
   return (
     <>
+      <NavLink to="/cargo" className="btn">
+        Повернутися до замовлень
+      </NavLink>
       <h1 className="large dark-color">Створення вантажу</h1>
       <p className="lead">Створіть свій вантаж, який ви хочете перевезти</p>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
@@ -81,41 +82,6 @@ const CargoForm = () => {
         <Button type="submit">Опублікувати перевезення</Button>
       </form>
     </>
-
-    // <Section>
-    //   <Div>
-    //     <Form
-    //       onSubmit={(e) => {
-    //         e.preventDefault();
-    //         axios.post("http://localhost:44351/api/cargo").then((cargo) => {
-    //           let newCargo = {
-    //             ...cargo,
-    //             id: this.props.cargoes.length + 1,
-    //           };
-    //           console.log(newCargo);
-    //           // this.props.addCargo(newCargo);
-    //         });
-    //       }}
-    //     >
-    //       <Input
-    //         onChange={props.handleInputChange}
-    //         name="name"
-    //         placeholder="Name"
-    //       ></Input>
-    //       <Input
-    //         onChange={props.handleInputChange}
-    //         name="weight"
-    //         placeholder="Weight"
-    //       ></Input>
-    //       <TextArea
-    //         onChange={props.handleInputChange}
-    //         name="description"
-    //         placeholder="Description"
-    //       ></TextArea>
-    //       <Button type="submit">Опублікувати перевезення</Button>
-    //     </Form>
-    //   </Div>
-    // </Section>
   );
 };
 

@@ -70,7 +70,6 @@ export const getAuthUserData = () => (dispatch) => {
       })
       .then((response) => {
         let { displayName, userName } = response.data;
-        debugger
         // setAuthorizationToken(token);
         dispatch(setAuthUserData(displayName, userName, true));
       });

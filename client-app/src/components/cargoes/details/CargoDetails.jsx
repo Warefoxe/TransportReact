@@ -1,4 +1,5 @@
 import React from "react";
+reimport { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Loader from "../../../app/layout/Loader/Loader";
 
@@ -43,9 +44,11 @@ const CargoDetails = (props) => {
     return <Loader />;
   }
 
-  
   return (
     <section className="container">
+      <NavLink to="/cargo" className="btn">
+        Повернутися до замовлень
+      </NavLink>
       <DIV>
         <Name>{props.cargo.name}</Name>
         <Body>

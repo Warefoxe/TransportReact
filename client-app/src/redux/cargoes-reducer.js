@@ -1,7 +1,12 @@
 import { cargoesAPI } from "../app/api/agent";
+import { setAlert } from "./alert-reducer";
+import { getAuthUserData } from "./auth-reducer";
 
-const SET_CARGOES = "SET_CARGOES";
+const SET_CARGOES = "GET_CARGOES";
+const CARGO_ERROR = "CARGO_ERROR";
+
 const SET_CARGO = "SET_CARGO";
+
 const ADD_CARGO = "ADD_CARGO";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_CARGOS_COUNT = "SET_TOTAL_CARGOS_COUNT";
@@ -14,6 +19,7 @@ let initialState = {
   totalCargosCount: 0,
   currentPage: 1,
   isFetching: true,
+  error: {},
 };
 
 const cargoesReducer = (state = initialState, action) => {
@@ -23,13 +29,21 @@ const cargoesReducer = (state = initialState, action) => {
         ...state,
         cargoes: action.cargoes,
       };
+    case CARGO_ERROR:
+      return {
+        ...state,
+        error: action,
+      };
     case SET_CARGO:
       return {
         ...state,
         cargo: action.cargo,
       };
     case ADD_CARGO:
-      return [...state, action.payload];
+      return {
+        ...state,
+        cargoes: [...state.cargoes, action.payload],
+      };
     case SET_CURRENT_PAGE:
       return {
         ...state,
@@ -64,10 +78,10 @@ export const setCargo = (cargo) => {
   };
 };
 
-export const addCargo = (cargo) => {
+export const addCargo = (name, weight, description) => {
   return {
     type: ADD_CARGO,
-    cargo,
+    payload: { name, weight, description },
   };
 };
 
@@ -108,6 +122,47 @@ export const getCargo = (id) => (dispatch) => {
   cargoesAPI.getCargo(id).then((response) => {
     dispatch(setCargo(response.data));
   });
+};
+
+export const createAttendee = (user) => {
+  debugger;
+  return {
+    displayName: user.displayName,
+    isHost: false,
+    username: user.username,
+  };
+};
+
+export const createCargo = (name, weight, description) => async (dispatch) => {
+  console.log(dispatch(getAuthUserData()));
+  cargoesAPI
+    .createCargo(name, weight, description)
+    .then((response) => {
+      dispatch(addCargo(name, weight, description));
+      console.log(dispatch(getAuthUserData()));
+      // await agent.Activities.create(activity);
+      // const attendee = createAttendee(this.rootStore.userStore.user!);
+      // attendee.isHost = true;
+      // let attendees = [];
+      // attendees.push(attendee);
+      // activity.attendees = attendees;
+      // activity.comments = [];
+      // activity.isHost = true;
+      dispatch(setAlert("Вантаж створено", "success"));
+    })
+    .catch((err) => {
+      dispatch(setAlert("Логін чи пароль неправильні", "danger"));
+
+      // const errors = err.response.data.errors;
+      // if (errors) {
+      //   Object.values(errors).forEach((error) => {
+      //     dispatch(setAlert(error, "danger"));
+      //   });
+      // }
+      // dispatch({
+      //   type: CARGO_ERROR,
+      // });
+    });
 };
 
 export default cargoesReducer;
