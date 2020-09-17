@@ -16,6 +16,7 @@ class ProfileContainer extends Component {
 const mapStateToProps = (state) => ({
   isAuth: state.auth.isAuth,
   displayName: state.auth.displayName,
+  userName: state.auth.userName,
 });
 
 export default connect(mapStateToProps, { getAuthUserData })(

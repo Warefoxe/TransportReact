@@ -125,7 +125,6 @@ export const getCargo = (id) => (dispatch) => {
 };
 
 export const createAttendee = (user) => {
-  debugger;
   return {
     displayName: user.displayName,
     isHost: false,

@@ -83,6 +83,7 @@ export const register = (displayName, userName, email, password) => async (
     .register(displayName, userName, email, password)
     .then((response) => {
       dispatch(setAuthRegisterData(displayName, userName, email, password));
+      dispatch(setAlert("Ви успішно зареєстувалися", "success"));
     })
     .catch((err) => {
       const errors = err.response.data.errors;

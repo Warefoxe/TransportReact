@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Cargoes.module.css";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
@@ -47,13 +47,18 @@ const Description = styled.p`
   font-weight: 300;
 `;
 
-const Cargoes = (props) => {
+const Cargoes = React.memo((props) => {
   let pagesCount = Math.ceil(props.totalCargosCount / props.pageSize);
-  let pages = [];
 
+  let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
+
+  let portionCount = Math.ceil(pagesCount / 10);
+  let [portionNumber, setportionNumber] = useState(1);
+  let leftPortionPageNumber = (portionNumber - 1) * 10 + 1;
+  let rightPortionPageNumber = portionNumber * 10;
 
   return (
     <div>
@@ -88,23 +93,49 @@ const Cargoes = (props) => {
       ))}
 
       <div>
-        {pages.map((p) => {
-          return (
-            <Pagination key={p}>
-              <A
-                className={props.currentPage === p && s.selectedPage}
-                onClick={(e) => {
-                  props.onPageChanged(p);
-                }}
-              >
-                {p}
-              </A>
-            </Pagination>
-          );
-        })}
+        {portionNumber > 1 && (
+          <Pagination>
+            <A
+              onClick={() => {
+                setportionNumber(portionNumber - 1);
+              }}
+            >
+              PREV
+            </A>
+          </Pagination>
+        )}
+        {pages
+          .filter(
+            (p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber
+          )
+          .map((p) => {
+            return (
+              <Pagination key={p}>
+                <A
+                  className={props.currentPage === p && s.selectedPage}
+                  onClick={(e) => {
+                    props.onPageChanged(p);
+                  }}
+                >
+                  {p}
+                </A>
+              </Pagination>
+            );
+          })}
+        {portionCount > portionNumber && (
+          <Pagination>
+            <A
+              onClick={() => {
+                setportionNumber(portionNumber + 1);
+              }}
+            >
+              NEXT
+            </A>
+          </Pagination>
+        )}
       </div>
     </div>
   );
-};
+});
 
 export default Cargoes;

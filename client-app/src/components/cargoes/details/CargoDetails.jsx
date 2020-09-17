@@ -1,5 +1,5 @@
 import React from "react";
-reimport { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Loader from "../../../app/layout/Loader/Loader";
 
