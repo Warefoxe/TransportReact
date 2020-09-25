@@ -22,20 +22,20 @@ namespace API.Services
         {
             var cargoes = _unitOfWork.CargoRepository.GetAll();
 
-            if (filters.Name != null)
-            {
-                cargoes = cargoes.Where(x => x.Name.ToLower().Contains(filters.Name.ToLower()));
-            }
+            //if (filters.Name != null)
+            //{
+            //    cargoes = cargoes.Where(x => x.Name.ToLower().Contains(filters.Name.ToLower()));
+            //}
 
-            if (filters.Weight != null)
-            {
-                cargoes = cargoes.Where(x => x.Weight == filters.Weight);
-            }
+            //if (filters.Weight != null)
+            //{
+            //    cargoes = cargoes.Where(x => x.Weight == filters.Weight);
+            //}
 
-            if (filters.Description != null)
-            {
-                cargoes = cargoes.Where(x => x.Description.ToLower().Contains(filters.Description.ToLower()));
-            }
+            //if (filters.Description != null)
+            //{
+            //    cargoes = cargoes.Where(x => x.Description.ToLower().Contains(filters.Description.ToLower()));
+            //}
 
             var pagedCargoes = PagedList<Cargo>.Create(cargoes, filters.PageNumber, filters.PageSize);
 
@@ -45,6 +45,12 @@ namespace API.Services
         public async Task<Cargo> GetCargo(int id)
         {
             return await _unitOfWork.CargoRepository.GetById(id);
+        }
+
+        public async Task InsertCargo(Cargo cargo)
+        { 
+            await _unitOfWork.CargoRepository.Add(cargo);
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

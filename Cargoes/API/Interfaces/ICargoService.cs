@@ -12,5 +12,6 @@ namespace API.Interfaces
     {
         PagedList<Cargo> GetCargos(CargoQueryFilter filters);
         Task<Cargo> GetCargo(int id);
+        Task InsertCargo(Cargo cargo);
     }
 }

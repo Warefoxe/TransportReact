@@ -72,10 +72,10 @@ namespace API.Controllers
                 throw new RestException(HttpStatusCode.BadRequest, new { Email = "Така електронна пошта вже існує" });
             }
 
-            //if (await _context.Users.Where(x => x.UserName == register.UserName).AnyAsync())
-            //{
-            //    throw new RestException(HttpStatusCode.BadRequest, new { UserName = "Username alredy exists" });
-            //}
+            if (await _context.Users.Where(x => x.UserName == register.UserName).AnyAsync())
+            {
+                throw new RestException(HttpStatusCode.BadRequest, new { UserName = "Таке ім'я користувача вже існує" });
+            }
 
             var user = new AppUser
             {

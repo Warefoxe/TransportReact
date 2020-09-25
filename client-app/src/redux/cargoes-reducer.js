@@ -132,12 +132,12 @@ export const createAttendee = (user) => {
   };
 };
 
-export const createCargo = (name, weight, description) => async (dispatch) => {
+export const createCargo = (name, weight, description, image) => async (dispatch) => {
   console.log(dispatch(getAuthUserData()));
   cargoesAPI
-    .createCargo(name, weight, description)
+    .createCargo(name, weight, description, image)
     .then((response) => {
-      dispatch(addCargo(name, weight, description));
+      dispatch(addCargo(name, weight, description, image));
       console.log(dispatch(getAuthUserData()));
       // await agent.Activities.create(activity);
       // const attendee = createAttendee(this.rootStore.userStore.user!);

@@ -10,12 +10,16 @@ using Domain;
 using Domain.CustomEntities;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -34,10 +38,11 @@ namespace API.Controllers
         private readonly ICargoService _cargoService;
         private readonly IUriService _uriService;
         private readonly IUserAccessor _userAccessor;
+        private readonly IWebHostEnvironment _env;
 
         public CargoController(IMediator mediator, ApplicationDbContext context,
             IUriService uriService, IUserAccessor userAccessor,
-            IConfiguration configuration, IMapper mapper, ICargoService cargoService)
+            IConfiguration configuration, IMapper mapper, ICargoService cargoService, IWebHostEnvironment env)
         {
             _mediator = mediator;
             _context = context;
@@ -46,6 +51,7 @@ namespace API.Controllers
             _configuration = configuration;
             _mapper = mapper;
             _cargoService = cargoService;
+            _env = env;
         }
 
         //[HttpGet]
@@ -139,17 +145,18 @@ namespace API.Controllers
         //}
 
         [HttpPost]
-        public async Task<ActionResult<Unit>> Create(Cargo cargo)
+        public async Task<ActionResult<Unit>> Create([FromBody]CargoDTO cargoDTO)
         {
-            var cargoes = new Cargo
+            Cargo cargo = new Cargo
             {
-                Id = cargo.Id,
-                Name = cargo.Name,
-                Weight = cargo.Weight,
-                Description = cargo.Description,
+                Id = cargoDTO.Id,
+                Name = cargoDTO.Name,
+                Weight = cargoDTO.Weight,
+                Description = cargoDTO.Description,
+                Image = "https://ktonanovenkogo.ru/image/tovar-chto-takoe-korobka.jpg",
             };
 
-            _context.Cargos.Add(cargoes);
+            _context.Cargos.Add(cargo);
 
 
             //string id = User.Claims.ToList()[0].Value;

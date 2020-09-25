@@ -23,6 +23,17 @@
   margin-bottom: 3rem;
 }
 
+img {
+  width: 100%;
+}
+
+.cargo {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem;
+  align-items: center;
+}
+
 .text-primary {
   color: var(--primary-color);
 }
@@ -287,11 +298,11 @@ button {
     margin-bottom: 0.2rem;
   }
 
-  .post {
+  .cargo {
     grid-template-columns: 1fr;
   }
-  .post a,
-  .post button {
+  .cargo a,
+  .cargo button {
     padding: 0.3rem 0.4rem;
   }
 }

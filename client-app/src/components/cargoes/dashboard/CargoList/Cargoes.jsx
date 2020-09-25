@@ -17,35 +17,35 @@ const A = styled.a`
   padding: 10px 15px;
 `;
 
-const Name = styled.h3`
-  padding: 7px 15px;
-  border: 1px solid #c1bdbd;
-  font-size: 16px;
-`;
+// const Name = styled.h3`
+//   padding: 7px 15px;
+//   border: 1px solid #c1bdbd;
+//   font-size: 16px;
+// `;
 
-const Body = styled.div`
-  padding: 7px 15px;
-  border: 1px solid #c1bdbd;
-  font-size: 15px;
-  color: #2d2d2d;
-  border-top: 0px;
-`;
+// const Body = styled.div`
+//   padding: 7px 15px;
+//   border: 1px solid #c1bdbd;
+//   font-size: 15px;
+//   color: #2d2d2d;
+//   border-top: 0px;
+// `;
 
-const Desc = styled.div`
-  padding: 5px 0px;
-  word-wrap: break-word;
-`;
+// const Desc = styled.div`
+//   padding: 5px 0px;
+//   word-wrap: break-word;
+// `;
 
-const Weight = styled.div`
-  color: #000000;
-  font-weight: 300;
-  margin: 6px 0;
-`;
+// const Weight = styled.div`
+//   color: #000000;
+//   font-weight: 300;
+//   margin: 6px 0;
+// `;
 
-const Description = styled.p`
-  color: #000000;
-  font-weight: 300;
-`;
+// const Description = styled.p`
+//   color: #000000;
+//   font-weight: 300;
+// `;
 
 const Cargoes = React.memo((props) => {
   let pagesCount = Math.ceil(props.totalCargosCount / props.pageSize);
@@ -60,6 +60,7 @@ const Cargoes = React.memo((props) => {
   let leftPortionPageNumber = (portionNumber - 1) * 10 + 1;
   let rightPortionPageNumber = portionNumber * 10;
 
+  console.log(props.cargoes);
   return (
     <div>
       <div>
@@ -71,25 +72,59 @@ const Cargoes = React.memo((props) => {
         <span>Замовлення на перевезення</span>
       </div>
       {props.cargoes.map((cargo) => (
-        <div key={cargo.id}>
-          <NavLink to={"/cargo/" + cargo.id}>
-            <Name>{cargo.name}</Name>
-          </NavLink>
-          <Body>
-            <Desc>
-              <Weight>
+        <div key={cargo.id} className="cargoes">
+          <div className="cargo bg-white p-1 my-1">
+            <div>
+              <NavLink to={"/cargo/" + cargo.id}>
+                <img
+                  className="round-img"
+                  src={
+                    cargo.image ||
+                    "https://www.iconfinder.com/data/icons/abstract-1/512/no_image-512.png"
+                  }
+                  alt=""
+                />
+              </NavLink>
+            </div>
+            <div>
+              <p className="my-1">
+                <strong>{cargo.name}</strong>
+              </p>
+              <p className="my-1">
                 <b>Вага: </b>
                 {cargo.weight} кг.
-              </Weight>
-            </Desc>
-            <Desc>
-              <Description>
+              </p>
+              <p className="my-1">
                 <b>Деталі замовлення: </b>
                 {cargo.description}
-              </Description>
-            </Desc>
-          </Body>
+              </p>
+            </div>
+          </div>
         </div>
+        // <div key={cargo.id}>
+        //   <NavLink to={"/cargo/" + cargo.id}>
+        //     <Name>{cargo.name}</Name>
+        //   </NavLink>
+        //   <Body>
+        //     <img
+        //       className="round-img"
+        //       src="https://www.iconfinder.com/data/icons/abstract-1/512/no_image-512.png"
+        //       alt=""
+        //     />
+        //     <Desc>
+        //       <Weight>
+        //         <b>Вага: </b>
+        //         {cargo.weight} кг.
+        //       </Weight>
+        //     </Desc>
+        //     <Desc>
+        //       <Description>
+        //         <b>Деталі замовлення: </b>
+        //         {cargo.description}
+        //       </Description>
+        //     </Desc>
+        //   </Body>
+        // </div>
       ))}
 
       <div>

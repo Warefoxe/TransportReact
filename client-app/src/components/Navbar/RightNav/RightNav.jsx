@@ -1,3 +1,4 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
@@ -94,7 +95,17 @@ const RightNav = (props) => {
         ))}
         {props.isAuth ? (
           <NavLink to="/profile">
-            {props.displayName} - <button onClick={props.logout}>Вийти</button>
+            {props.displayName} -{" "}
+            <Button
+              aria-controls="customized-menu"
+              aria-haspopup="true"
+              variant="contained"
+              color="primary"
+              onClick={props.logout}
+            >
+              Вийти
+            </Button>
+            {/* <button onClick={props.logout}>Вийти</button> */}
           </NavLink>
         ) : (
           <>

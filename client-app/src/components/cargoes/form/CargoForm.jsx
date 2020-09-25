@@ -79,6 +79,12 @@ const CargoForm = (props) => {
             required
           />
         </div>
+        {/* <div className="form-group">
+          <input
+            type="file"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+        </div> */}
         <Button type="submit">Опублікувати перевезення</Button>
       </form>
     </>
