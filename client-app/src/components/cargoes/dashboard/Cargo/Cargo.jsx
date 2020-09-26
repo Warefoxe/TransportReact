@@ -12,10 +12,10 @@ const Cargo = () => {
             Отримайте кращі пропозиції на перевезення вантажів від водіїв
           </div>
           <div className={s.buttons}>
-            <NavLink exact to={"/transport"}>
+            <NavLink exact to={"/register"}>
               Я замовник
             </NavLink>
-            <NavLink exact to={"/transport"}>
+            <NavLink exact to={"/register"}>
               Я водій
             </NavLink>
           </div>
