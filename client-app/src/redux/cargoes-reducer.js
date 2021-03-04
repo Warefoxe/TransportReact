@@ -107,21 +107,31 @@ export const toggleIsFetching = (isFetching) => {
 };
 
 export const getCargoes = (currentPage, pageSize) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(setCurrentPage(currentPage));
     dispatch(toggleIsFetching(true));
-    cargoesAPI.getCargoes(currentPage, pageSize).then((data) => {
-      dispatch(toggleIsFetching(false));
-      dispatch(setCargoes(data.data));
-      dispatch(setTotalCargoCount(data.meta.totalCount));
-    });
+
+    let data = await cargoesAPI.getCargoes(currentPage, pageSize);
+
+    dispatch(toggleIsFetching(false));
+    dispatch(setCargoes(data.data));
+    dispatch(setTotalCargoCount(data.meta.totalCount));
+
+    // cargoesAPI.getCargoes(currentPage, pageSize).then((data) => {
+    //   dispatch(toggleIsFetching(false));
+    //   dispatch(setCargoes(data.data));
+    //   dispatch(setTotalCargoCount(data.meta.totalCount));
+    // });
   };
 };
 
-export const getCargo = (id) => (dispatch) => {
-  cargoesAPI.getCargo(id).then((response) => {
-    dispatch(setCargo(response.data));
-  });
+export const getCargo = (id) => async (dispatch) => {
+  let response = await cargoesAPI.getCargo(id);
+  dispatch(setCargo(response.data));
+
+  // cargoesAPI.getCargo(id).then((response) => {
+  //   dispatch(setCargo(response.data));
+  // });
 };
 
 export const createAttendee = (user) => {
@@ -132,36 +142,53 @@ export const createAttendee = (user) => {
   };
 };
 
-export const createCargo = (name, weight, description, image) => async (dispatch) => {
+export const createCargo = (name, weight, description, image) => async (
+  dispatch
+) => {
   console.log(dispatch(getAuthUserData()));
-  cargoesAPI
-    .createCargo(name, weight, description, image)
-    .then((response) => {
-      dispatch(addCargo(name, weight, description, image));
-      console.log(dispatch(getAuthUserData()));
-      // await agent.Activities.create(activity);
-      // const attendee = createAttendee(this.rootStore.userStore.user!);
-      // attendee.isHost = true;
-      // let attendees = [];
-      // attendees.push(attendee);
-      // activity.attendees = attendees;
-      // activity.comments = [];
-      // activity.isHost = true;
-      dispatch(setAlert("Вантаж створено", "success"));
-    })
-    .catch((err) => {
-      dispatch(setAlert("Логін чи пароль неправильні", "danger"));
 
-      // const errors = err.response.data.errors;
-      // if (errors) {
-      //   Object.values(errors).forEach((error) => {
-      //     dispatch(setAlert(error, "danger"));
-      //   });
-      // }
-      // dispatch({
-      //   type: CARGO_ERROR,
-      // });
-    });
+  try {
+    let response = await cargoesAPI.createCargo(
+      name,
+      weight,
+      description,
+      image
+    );
+    dispatch(addCargo(name, weight, description, image));
+    console.log(dispatch(getAuthUserData()));
+    dispatch(setAlert("Вантаж створено", "success"));
+  } catch (error) {
+    dispatch(setAlert("Логін чи пароль неправильні", "danger"));
+  }
+
+  // cargoesAPI
+  //   .createCargo(name, weight, description, image)
+  //   .then((response) => {
+  //     dispatch(addCargo(name, weight, description, image));
+  //     console.log(dispatch(getAuthUserData()));
+  //     // await agent.Activities.create(activity);
+  //     // const attendee = createAttendee(this.rootStore.userStore.user!);
+  //     // attendee.isHost = true;
+  //     // let attendees = [];
+  //     // attendees.push(attendee);
+  //     // activity.attendees = attendees;
+  //     // activity.comments = [];
+  //     // activity.isHost = true;
+  //     dispatch(setAlert("Вантаж створено", "success"));
+  //   })
+  //   .catch((err) => {
+  //     dispatch(setAlert("Логін чи пароль неправильні", "danger"));
+
+  //     // const errors = err.response.data.errors;
+  //     // if (errors) {
+  //     //   Object.values(errors).forEach((error) => {
+  //     //     dispatch(setAlert(error, "danger"));
+  //     //   });
+  //     // }
+  //     // dispatch({
+  //     //   type: CARGO_ERROR,
+  //     // });
+  //   });
 };
 
 export default cargoesReducer;

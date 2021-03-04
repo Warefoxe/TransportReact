@@ -24,7 +24,7 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunkMiddleware))
 );
 
-setAuthorizationToken(localStorage.jwtToken);
+// setAuthorizationToken(localStorage.jwtToken);
 window.store = store;
 
 export default store;

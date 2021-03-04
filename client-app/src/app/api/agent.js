@@ -1,8 +1,11 @@
 import * as axios from "axios";
 
+const token = localStorage.jwtToken;
+
 const instance = axios.create({
   baseURL: "https://localhost:44351/api/",
   "API-KEY": "45d4232f-3e4f-44b1-b25d-9f3a7e34f6af",
+  headers: { Authorization: `Bearer ${token}` },
 });
 
 export const cargoesAPI = {
